@@ -1,0 +1,6 @@
+name: mc-authorize-with-discord-vc
+version: '1.0-SNAPSHOT'
+main: ponlponl123.mcAuthorizeWithDiscordVc.McAuthorizeWithDiscordVc
+api-version: '1.21'
+authors: [Ponlponl123]
+website: https://github.com/ponlponl123/mc-authorize-with-discord-vc

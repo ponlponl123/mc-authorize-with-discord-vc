@@ -1,0 +1,10 @@
+discord-client-token: 'MY_DISCORD_CLIENT_TOKEN'
+discord-client-id: 'MY_DISCORD_CLIENT_ID'
+discord-owner-id: 'MY_DISCORD_ID'
+
+allowed-servers: # The server to listen
+  - '951884722248769596'
+
+allowed-members: # Who can access/play your server
+  Ponlponl123:
+    id: '839208649325805639'
