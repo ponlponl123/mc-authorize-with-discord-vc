@@ -1,4 +1,7 @@
 package ponlponl123.mcAuthorizeWithDiscordVc;
 
-public interface Subcommand {
+import org.bukkit.command.CommandSender;
+
+public interface SubCommand {
+    void execute(CommandSender sender, String[] args);
 }

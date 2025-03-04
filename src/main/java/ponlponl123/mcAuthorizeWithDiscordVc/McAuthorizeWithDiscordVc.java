@@ -7,6 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public final class McAuthorizeWithDiscordVc extends JavaPlugin implements Listener {
     public DiscordBot bot;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -24,6 +25,9 @@ public final class McAuthorizeWithDiscordVc extends JavaPlugin implements Listen
         }
 
         getServer().getPluginManager().registerEvents(new LoginListener(this), this);
+        if (getCommand("mcawd") != null) {
+            getCommand("mcawd").setExecutor(new CommandHandler(this));
+        }
     }
 
     @Override

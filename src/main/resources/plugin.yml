@@ -4,3 +4,13 @@ main: ponlponl123.mcAuthorizeWithDiscordVc.McAuthorizeWithDiscordVc
 api-version: '1.21'
 authors: [Ponlponl123]
 website: https://github.com/ponlponl123/mc-authorize-with-discord-vc
+commands:
+  mcawd:
+    description: "MCAuthorizeWithDiscord Commands"
+    usage: /mcawd <reload|add|remove|edit>
+    permission: mcawd.admin
+    permission-message: "You do not have permission to use this command"
+permissions:
+  mcawd.admin:
+    description: Allows access to admin commands.
+    default: op
