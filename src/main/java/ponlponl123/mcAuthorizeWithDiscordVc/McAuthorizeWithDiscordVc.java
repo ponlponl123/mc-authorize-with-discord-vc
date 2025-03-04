@@ -34,5 +34,8 @@ public final class McAuthorizeWithDiscordVc extends JavaPlugin implements Listen
     public void onDisable() {
         // Plugin shutdown logic
         getLogger().info("McAuthorizeWithDiscordVc Plugin Disabled!");
+        if ( bot.client != null ) {
+            bot.client.shutdown();
+        }
     }
 }

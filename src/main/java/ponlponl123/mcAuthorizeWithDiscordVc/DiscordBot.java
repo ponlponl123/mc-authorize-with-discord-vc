@@ -52,9 +52,13 @@ public class DiscordBot extends ListenerAdapter {
     @Override
     public void onGuildVoiceUpdate(@NotNull GuildVoiceUpdateEvent event) {
         try {
+            if (!this.plugin.isEnabled()) {
+                System.out.println("Plugin is disabled, skipping scheduled task.");
+                return;
+            }
+
             AudioChannel oldChannel = event.getOldValue();
             AudioChannel newChannel = event.getNewValue();
-            System.out.println("Voice state update: oldChannel=" + oldChannel + ", newChannel=" + newChannel);
 
             if (oldChannel != null && newChannel == null) {
                 ConfigurationSection allowedMembersSection = this.plugin.getConfig().getConfigurationSection("allowed-members");
@@ -84,10 +88,12 @@ public class DiscordBot extends ListenerAdapter {
                 });
             }
         } catch (IllegalStateException e) {
-            System.err.println("An error occurred while processing voice state update: " + e.getMessage());
+//            System.err.println("An error occurred while processing voice state update: " + e.getMessage());
+            System.err.println("An error occurred while processing voice state update");
             e.printStackTrace();
         } catch (Exception e) {
-            System.err.println("An unexpected error occurred: " + e.getMessage());
+//            System.err.println("An unexpected error occurred: " + e.getMessage());
+            System.err.println("An unexpected error occurred");
             e.printStackTrace();
         }
     }
